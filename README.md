@@ -1,4 +1,3 @@
-
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -13,14 +12,17 @@
 <br />
 <div align="center">
   <a href="[https://github.com/othneildrew/Best-README-Template](https://slurm.schedmd.com/quickstart.html)">
-    <h1>OpenPBS</h1>
+    <img src="https://slurm.schedmd.com/slurm_logo.png" alt="Logo" width="80" height="80">
   </a>
+
+  <h3 align="center">Slurm</h3>
+
+  <p align="center">
+    Slurm Workload Manager
+  </p>
 </div>
 
-1. [Escreva PBS Job Scripts](https://github.com/Labtran/openpbs_tutorial2/blob/main/1-pbs-script.md)
-2. [Usando qstat](https://github.com/Labtran/openpbs_tutorial2/blob/main/2-qstat.md)
-3. [Usando qdel](https://github.com/Labtran/openpbs_tutorial2/blob/main/3-qdel.md)
-4. [Obtendo informações sobre os nós](https://github.com/Labtran/openpbs_tutorial2/blob/main/4-info-nodes.md)
-5. [Obtendo informações sobre as filas](https://github.com/Labtran/openpbs_tutorial2/blob/main/5-info-queue.md)
-6. [Login em outros nós](https://github.com/Labtran/openpbs_tutorial2/blob/main/6-login-in-to-nodes.md)
-7. [Passando Argumentos para Job Scripts](https://github.com/Labtran/openpbs_tutorial2/blob/main/7-passando-args-script.md)
+<!-- Visão Geral -->
+## Wiki
+
+Para ter acesso a documentação acesse a [Wiki](https://github.com/Labtran/slurm/wiki)
