@@ -1,10 +1,10 @@
-Using qstat
+Usando qstat
 =============================================
 
-Getting More Information out of Qstat
+Obtendo mais informações do Qstat
 -------------------------------------------------------------------------------------------------
 
-You can gain a lot more information from qstat if you use its command line options. On the cluster type `man qstat` to read the man pages for further details on the qstat command. Below is a consise qstat usage:
+Você pode obter muito mais informações do qstat se usar suas opções de linha de comando. No cluster, digite `man qstat` para ler as páginas de manual e obter mais detalhes sobre o comando qstat. Abaixo está um exemplo de uso do qstat:
 
 ```
 qstat [-f] [-J] [-p] [-t] [-x] [ job_identifier... | 
@@ -17,21 +17,21 @@ qstat -B [-f] [ server_name... ]
 qstat --version
 ``` 
 
-Below are some examples of using these command options. These examples use qstats “Default Format” and “Alternate Format”. Also note that qstat will only display your own jobs. Examples of qstat using Default Format
+Abaixo estão alguns exemplos de uso dessas opções de comando. Esses exemplos usam o "Formato padrão" e o "Formato alternativo" do qstat. Observe também que o qstat exibirá apenas seus próprios trabalhos. Exemplos de qstat usando o formato padrão
 
-The qstat command will display job status in default format when the following options are given:
+O comando qstat exibirá o status do trabalho no formato padrão quando as seguintes opções forem fornecidas:
 
 ```
 qstat [-p] [-J] [-t] [-x] [ [job_identifier | destination] …]
 
 (destination is any queue name)
--p The Time Use column is replaced with the percentage completed
--J Limits status information to job arrays.
--t Displays status information for jobs, job arrays and subjobs.
--x Displays status information for finished and moved jobs in addition to running and queued jobs.
+-p A coluna Uso do tempo é substituída pela porcentagem concluída
+-J Limita as informações de status às matrizes de trabalho.
+-t Exibe informações de status de trabalhos, matrizes de trabalhos e subtrabalhos.
+-x Exibe informações de status de trabalhos concluídos e movidos, além de trabalhos em execução e em fila.
 ``` 
 
-In Default Format usage the column headers will be:
+No uso do Formato Padrão, os cabeçalhos das colunas serão:
 
 ```
 Job id Name User Time Use S Queue
@@ -48,7 +48,7 @@ Job id            Name             User           Time Use S Queue
 ....
 ``` 
 
-and
+e
 
 ```
 $ qstat -p
@@ -62,7 +62,7 @@ Job id            Name             User           % done  S Queue
 ....
 ``` 
 
-Example of listing all your jobs in the smallq with percentage completed.
+Exemplo de listagem de todos os seus trabalhos no smallq com a porcentagem concluída.
 
 ```
 $ qstat -p smallq
@@ -74,7 +74,7 @@ Job id            Name             User           % done  S Queue
 ....
 ``` 
 
-Example of obtaining complete information on a job by using -f and the job_id. Note: if the job has already finished you will need to add a -x to show expired jobs (e.g. qstat -fx 6944)
+Exemplo de obtenção de informações completas sobre um trabalho usando -f e o job_id. Observação: se o trabalho já tiver sido concluído, será necessário adicionar um -x para mostrar os trabalhos expirados (por exemplo, qstat -fx 6944)
 
 ```
 $ qstat -f 6944
@@ -87,28 +87,32 @@ etime = Mon Feb 24 14:46:13 2014
 Submit_arguments = fingerprint_li.sh
 ``` 
 
-Examples of qstat using Alternate Format
+Exemplos de qstat usando o formato alternativo
 
-The qstat command will display job status in the alternate format if any of the following options are given:
+O comando qstat exibirá o status do trabalho no formato alternativo se alguma das opções a seguir for fornecida:
 
-`-a [job_id] All queued and running jobs are displayed. Must be before -n
--i [job] or [dest] information for queued, held or waiting jobs
--G Show size in gigabytes. Alternate format is used.
--H Displays information for all finished or moved jobs.
--M Show size in megawords. A word is considered to be 8 bytes.
--n The exec_host string is listed
--r If a destination is given, information for running or suspended jobs at that destination is displayed.
--s Any comment added by the administrator or scheduler is shown.
--u user_list
--T Displays estimated start time for queued jobs` 
+```
+-a [job_id] Todos os trabalhos em fila e em execução são exibidos. Deve estar antes de -n
+-i [job] ou [dest] informações sobre trabalhos enfileirados, retidos ou em espera
+-G Mostra o tamanho em gigabytes. É usado um formato alternativo.
+-H Exibe informações de todos os trabalhos concluídos ou movidos.
+-M Mostra o tamanho em megawords. Uma palavra é considerada como 8 bytes.
+-n A cadeia de caracteres exec_host é listada
+-r Se for fornecido um destino, serão exibidas informações sobre os trabalhos em execução ou suspensos nesse destino.
+-s Qualquer comentário adicionado pelo administrador ou pelo agendador é mostrado.
+-u lista_de_usuários
+-T Exibe a hora de início estimada dos trabalhos em fila
+```
 
-In Alternate Format usage the column headers will be:
+No uso do formato alternativo, os cabeçalhos das colunas serão:
 
-`Req’d Req’d Elap
+```
+Req’d Req’d Elap
 Job ID Username Queue Jobname SessID NDS TSK Memory Time S Time
-—— ——- —- ——- —— — — —— —- - —-` 
+—— ——- —- ——- —— — — —— —- - —-
+``` 
 
-Example using -a shows all jobs in alternate format and the -n1 shows the node that the program is executing on.
+O exemplo usando -a mostra todos os trabalhos em formato alternativo e o -n1 mostra o nó em que o programa está sendo executado.
 
 ```
 $ qstat -an1 workq
